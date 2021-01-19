@@ -18,7 +18,7 @@
 - JAMstack, Serverless
 - Unnecessary management
 - Server monitoring only
-  - Tell more information to users via Twitter etc.
+  - Tell more information to users via Fediverse etc.
 
 # Required
 
@@ -104,12 +104,12 @@ service cloud.firestore {
   - Publish directory: `dist`
   - Advanced build settings
 
-| Key                     | Value                                    |
-| ----------------------- | ---------------------------------------- |
-| `SITE_TITLE`            | site title                               |
-| `TWITTER_ID` (optional) | twitter id                               |
-| `FIREBASE_API_KEY`      | Firebase Console 上の**ウェブ API キー** |
-| `FIREBASE_PROJECT_ID`   | 〃 **プロジェクト ID**                   |
+| Key                       | Value                                    |
+| ------------------------- | ---------------------------------------- |
+| `SITE_TITLE`              | site title                               |
+| `NOTESTOCK_ID` (optional) | notestock id(cutls@1m.cutls.com など)  |
+| `FIREBASE_API_KEY`        | Firebase Console 上の**ウェブ API キー** |
+| `FIREBASE_PROJECT_ID`     | 〃 **プロジェクト ID**                   |
 
 ![image](https://i.imgur.com/z29KJd9.png)
 

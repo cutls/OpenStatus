@@ -2,7 +2,7 @@ import { app, h } from 'hyperapp';
 import dotenv from 'dotenv';
 import '../scss/index.scss';
 import { Statuses } from './components/statuses';
-import { Twitter } from './components/twitter';
+import { Notestock } from './components/notestock';
 import { Header } from './components/header';
 import { Footer } from './components/footer';
 import {
@@ -19,10 +19,9 @@ window.onload = () => {
     title.textContent = process.env.SITE_TITLE;
     document.head.appendChild(title);
   }
-
   const state = {
     name: process.env.SITE_TITLE,
-    twitterAccount: process.env.TWITTER_ID,
+    notestockAccount: process.env.NOTESTOCK_ID,
     firestore: {
       statuses: []
     }
@@ -40,7 +39,7 @@ window.onload = () => {
           <Statuses state={state.firestore} />
         </div>
 
-        <Twitter state={state} />
+        <Notestock state={state} />
       </div>
 
       <Footer />
