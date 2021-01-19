@@ -7,7 +7,6 @@ export const ConnectFireStore = () => {
     authDomain: process.env.FIREBASE_PROJECT_ID + '.firebaseapp.com',
     projectId: process.env.FIREBASE_PROJECT_ID
   });
-
   return firebase.firestore();
 };
 
@@ -33,12 +32,13 @@ export const GetData = () => {
         const data = query.data();
 
         const newData = Object.keys(data).map(statusName => {
-          const status = data[statusName];
+          const { status, updated_at, last_changed } = data[statusName];
 
           return {
             name: statusName,
-            status: status.status,
-            updated_at: status.updated_at
+            status: status,
+            updated_at: updated_at,
+            last_changed: last_changed
           };
         });
 

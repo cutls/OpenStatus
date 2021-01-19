@@ -16,15 +16,20 @@ function load() {
   } catch (e) {
     firestore.createDocument('statuses/now', {});
   }
-
+  const nowDoc = firestore.getDocument('statuses/now')
   for (var key in monitoringList) {
     const monitorResult = monitor(monitoringList[key].url);
 
     monitoringList[key].status = monitorResult;
     monitoringList[key].updated_at = Date.now();
+    monitoringList[key].last_changed = nowDoc.obj[key].last_changed;
 
     if (status && status[key] && status[key].status !== monitorResult) {
+      monitoringList[key].last_changed = Date.now();
       integration(key, monitorResult);
+    }
+    if (!monitoringList[key].last_changed) {
+      monitoringList[key].last_changed = Date.now();
     }
   }
 

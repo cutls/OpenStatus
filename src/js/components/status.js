@@ -16,13 +16,14 @@ export const Status = ({ state }) => {
     <ul className="list-group">
       {state.statuses.map(status => (
         <li className="list-group-item d-flex justify-content-between align-items-center">
-          <span>
+          <div className="d-flex flex-column">
             <b>{status.name}</b>
 
-            <small className="text-muted ml-1">
-              {moment(status.updated_at).fromNow()}
+            <small className="text-muted">
+              Last updated: {moment(status.updated_at).fromNow()}<br />
+              It has been {statusName(status.status)} for {moment(status.last_changed).fromNow().replace(' ago', '')}
             </small>
-          </span>
+          </div>
 
           <span
             className={`badge badge-${StatusColor(
