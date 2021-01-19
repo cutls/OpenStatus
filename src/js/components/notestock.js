@@ -15,7 +15,7 @@ export const Notestock = ({ state }) => {
               <ins data-title={`${state.notestockAccount}の投稿`} data-acct={state.notestockAccount} data-limit="30" data-nocss="1"></ins>
             </div>
           </div>
-          <script src="https://notestock.osa-p.net/_js/notestock_widget.js" defer></script>
+          <script src="https://notestock.osa-p.net/_js/notestock_widget.js" async></script>
       </div>
       </div>
   );
