@@ -48,5 +48,14 @@ window.onload = () => {
 
   const App = app(state, actions, view, document.body);
 
-  GetData().then(data => App.firestore.update(data));
+  GetData().then(data => {
+    App.firestore.update(data)
+  });
+  const watch = setInterval(() => {
+    const elm = document.querySelectorAll('ins[data-acct],ins[data-keyword]')
+    if(elm && notestock) {
+      notestock.widget.write(elm[0], 0)
+      clearInterval(watch)
+    }
+  }, 500);
 };

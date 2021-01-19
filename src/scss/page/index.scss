@@ -16,3 +16,12 @@ body {
 .badge {
   border-radius: 5px;
 }
+ins {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+.ns-frame {
+  width: 100% !important;
+  max-width: 100% !important;
+}

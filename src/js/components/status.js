@@ -11,7 +11,6 @@ export const Status = ({ state }) => {
   if (!state.statuses) {
     return null;
   }
-
   return (
     <ul className="list-group">
       {state.statuses.map(status => (
